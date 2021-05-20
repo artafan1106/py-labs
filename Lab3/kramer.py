@@ -1,11 +1,12 @@
 import random
 import numpy
+import numpy as np
 import time
 import matplotlib.pyplot as plt
 
 result_time = []
 
-for n in range (2, 11):
+for n in range (2, 151):
     start = time.time()
     myA = []
     myB = []
@@ -25,11 +26,13 @@ for n in range (2, 11):
     print(myB)
 print (result_time)
 
-fig, ax = plt.subplots()
-plt.xlabel('Кол-во попыток')
-plt.ylabel('Значение')
 
-ax.plot(result_time,label='time')
+fig, ax = plt.subplots()
+
+plt.xlabel('Кол-во элементов в матрице')
+plt.ylabel('Время выполнения')
+plt.title('График увеличения времени решения системы')
+
+ax.plot(np.arange(2, 150+1, 1),result_time,label='time')
 ax.legend()
 plt.show()
-
