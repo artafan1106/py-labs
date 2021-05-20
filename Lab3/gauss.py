@@ -92,9 +92,10 @@ for n in range (2, 11):
     Gauss(myA, myB)
 
 fig, ax = plt.subplots()
-plt.xlabel('Кол-во попыток')
+plt.xlabel('Кол-во элементов в матрице')
 plt.ylabel('Значение')
+plt.title('График увеличения времени решения системы')
 
-ax.plot(result_time,label='time')
+ax.plot(np.arange(2, 10+1, 1),result_time,label='time')
 ax.legend()
 plt.show()
