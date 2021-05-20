@@ -21,10 +21,13 @@ for n_current in range(n_start, n_stop+n_step, n_step):
     tr_integral_data.append(math.fabs(ideal_value - tr_integral(fn, lower_limit, upper_limit, n_current)))
     simpsons_integral_data.append(math.fabs(ideal_value - simpsons_(lower_limit, upper_limit, n_current)))
 
-ax.plot(rect_integral_data, label='rect')
-ax.plot(tr_integral_data, label='tr')
-ax.plot(simpsons_integral_data, label='simpsons')
+ax.plot(np.arange(1, 200+1, 1), rect_integral_data, label='rect')
+ax.plot(np.arange(1, 200+1, 1),tr_integral_data, label='tr')
+ax.plot(np.arange(1, 200+1, 1),simpsons_integral_data, label='simpsons')
 ax.legend()
+plt.ylabel('Значение')
+plt.xlabel('Кол-во попыток')
+plt.title('График точности решения всеми методами в зависимости от количества разбиений')
 
 
 plt.show()
